@@ -155,3 +155,23 @@ footer{
     justify-content: center;
     text-align: center;
 }
+
+/* Responsive layout for smaller screens */
+@media (max-width: 800px) {
+    main {
+        height: auto;
+        margin: 40px 0;
+    }
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+    .left-panel, .right-panel {
+        width: 100%;
+        height: auto;
+    }
+    .left-panel {
+        padding: 30px 10px;
+    }
+}
