@@ -1,0 +1,139 @@
+.header-homepage{
+    font-family: arial;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(99, 138, 92);
+    border-radius: 10px;
+    height: 70px; /* Explicit height to match the login page */
+    box-sizing: border-box; /* Ensures padding/borders don't affect total height */
+}
+
+
+.homepage-logo img{
+    width: 70px;
+    height: 55px;
+    image-rendering: auto;  
+    padding: 5px;
+
+}
+
+.homepage-text a{
+    color: black;
+    font-size: 20px;
+}
+
+/* #home-page-search-box-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+.home-page-search-login{
+    margin-left: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
+ }
+
+ #home-page-login-top{
+    display: flex;
+    align-items: center;
+    
+ }
+
+#home-page-login-top a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none; 
+    color: black;
+}
+
+#home-page-login-top img {
+    width: 35px;
+    height: 30px;
+}
+
+
+#home-page-cart-top a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none; 
+    color: black;
+    margin-right: 15px;
+}
+
+#home-page-cart-top img {
+    width: 25px;
+    height: 20px;
+}
+
+.home-page-search-box input {
+    width: 20vw; /* Scales the input to take up 30% of the browser's width */
+    min-width: 150px; /* Prevents the box from getting too squished on very small screens */
+    max-width: 500px; /* Prevents the box from becoming endlessly wide on large screens */
+    padding: 4px; /* Adds some inner spacing to make the input box look nicer */
+}
+
+.menu-nav {
+    height: 7vh;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 0px;
+    display: flex;
+    align-items: center; /* Centers content vertically */
+}
+
+.three-line-ellipsis{
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.lines-icon {
+    color: white;
+    width: 30px; /* Changes the width of the SVG */
+    height: 30px; /* Changes the height of the SVG */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.three-line-ellipsis span {
+    color: white;
+}
+
+.menu-list ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-left: 15px;
+    display: flex; 
+    align-items: center;
+    /* gap: 15px; */
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center; /* Centers the text vertically inside the tall border */
+    height: 7vh; /* Matches the exact height of the .menu-nav bar */
+    padding: 0 15px; /* Adds horizontal space inside the border so it isn't touching the text */
+    box-sizing: border-box; /* Ensures the border doesn't make the element taller than 7vh */
+    /* border: 2px solid transparent; */
+}
+
+.menu-list li a:hover {
+    text-decoration: underline; /* Adds an underline */
+    border: 1px solid white;
+}
+
+
+
+footer{
+    text-align: center;
+}
