@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registration.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
-
+    <header>
+        <div class="header-reg" id="head-reg">
+            <img src="logo16.svg" alt="logo">
+            <a href="home_page.html"><B>CLIP BOX</B></a>
+        </div>
+    </header>
     <div class="container-reg">
         <h2>Registration</h2>
-        <input type="text" name="username" id="username-reg" placeholder="Enter Username">
-        <input type="password" name="password" id="password-reg" placeholder="Enter Password">
-        <button id="reg-button">Register</button>
+        <form id="registration">
+            <input type="text" name="username" id="username-reg" placeholder="Enter Username">
+            <input type="email" name="email" id="email-reg" placeholder="Enter Emailid">
+            <input type="password" name="new password" id="password-reg" placeholder="Enter New Password">
+            <input type="password" name="confirm password" id="confirm-password-reg" placeholder="Re-Enter New Password">
+            <input type="tel" name="phone" id="phone" maxlength="10" placeholder="Enter mobile number">
+            
+            <button id="reg-button">Register</button>
+        </form>
     </div>
 </body>
 </html>
