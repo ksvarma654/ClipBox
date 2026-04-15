@@ -1,0 +1,44 @@
+.header-reg{
+    background-color: rgb(99, 138, 92);
+    border-radius: 10px;
+;
+}
+
+.header-reg img{
+    width: 70px;
+    height: 55px; 
+    padding: 5px;
+}
+
+.container-reg{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form elements horizontally */
+}
+
+#registration {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds consistent vertical space between form elements */
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#registration input {
+    width: 250px; /* Give inputs and button a consistent width */
+    padding: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't add to the total width */
+}
+
+#registration button{
+    width: 100px;
+    padding: 8px;
+
+}
