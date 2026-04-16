@@ -1,7 +1,7 @@
 async function login() {
     //variables to hold respective value enterd by user inside element
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    const username = document.getElementById("username-log").value;
+    const password = document.getElementById("password-log").value;
     const message = document.getElementById("message");
 
     try {
