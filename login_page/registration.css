@@ -1,13 +1,23 @@
 .header-reg{
+    font-family: Arial;
     background-color: rgb(99, 138, 92);
     border-radius: 10px;
-;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
 }
 
 .header-reg img{
     width: 70px;
     height: 55px; 
     padding: 5px;
+    image-rendering: auto; 
+}
+
+.header-reg a{
+    font-size: 1.2rem;
+    color: black;
+    cursor: pointer;
 }
 
 .container-reg{
@@ -20,16 +30,17 @@
 #registration {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px; /* Adds consistent vertical space between form elements */
 }
 
-form{
+/* form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-}
+} */
 
 #registration input {
     width: 250px; /* Give inputs and button a consistent width */
@@ -40,5 +51,5 @@ form{
 #registration button{
     width: 100px;
     padding: 8px;
-
+    border-radius: 8px;
 }
