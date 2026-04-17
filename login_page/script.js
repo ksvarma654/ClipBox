@@ -20,7 +20,13 @@ async function login() {
                 message.style.color = "green";
                 message.textContent = "Login Successful";
                 console.log("Login Successful!")
-            }
+
+                sessionStorage.setItem("loggedInUser", username);
+                
+            setTimeout(() => {
+                window.location.href = "home_page.html";
+            }, 1000);
+        }
             else{
                 message.style.color = "red";
                 message.textContent = "Invalid Username or Password";
