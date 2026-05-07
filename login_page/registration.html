@@ -17,14 +17,33 @@
     <div class="container-reg">
         <h2>Registration</h2>
         <form id="registration">
-            <input type="text" name="username" id="username-reg" placeholder="Enter Username">
-            <input type="email" name="email" id="email-reg" placeholder="Enter Email ID">
-            <input type="password" name="new password" id="password-reg" placeholder="Enter New Password">
-            <input type="password" name="confirm password" id="confirm-password-reg" placeholder="Re-Enter New Password">
-            <input type="tel" name="phone" id="phone" maxlength="10" placeholder="Enter mobile number">
+            <div class="input-group">
+                <input type="text" name="username" id="username-reg" placeholder="Enter Username"><span id="username-valid"></span>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" id="email-reg" placeholder="Enter Email ID"><span id="email-valid"></span>
+            </div>
+            <div class="input-group">
+                <input type="password" name="new password" id="password-reg" placeholder="Enter New Password">
+            </div>
+            <div class="input-group">
+                <input type="password" name="confirm password" id="confirm-password-reg" placeholder="Re-Enter New Password"><span id="password-match"></span>
+            </div>
+            <div class="input-group">
+                <input type="tel" pattern="[0-9]{10}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" name="phone" id="phone" maxlength="10" placeholder="Enter mobile number"><span id="mobile-valid"></span>
+            </div>
             
-            <button id="reg-button">Register</button>
+            <button type="button" id="reg-button">Register</button>
+
+            <p id="message"></p>
         </form>
     </div>
+
+    <script src="script.js"></script>
+
+    <hr>
+    <footer>
+        <p>@2026 Clip Box All Rights Reserved</p>
+    </footer>
 </body>
 </html>
