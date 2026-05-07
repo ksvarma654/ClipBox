@@ -21,9 +21,11 @@
 }
 
 .container-reg{
+    min-height: 70vh;
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center; /* Centers the form elements horizontally */
 }
 
@@ -48,8 +50,26 @@
     box-sizing: border-box; /* Ensures padding doesn't add to the total width */
 }
 
+.input-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 250px; /* Matches the input width so boxes stay perfectly centered */
+}
+
+.input-group span {
+    position: absolute;
+    left: 260px; /* Pushes the message 10px to the right of the text box */
+    white-space: nowrap; /* Prevents the text from dropping to the next line */
+}
+
 #registration button{
+    cursor: pointer;
     width: 100px;
     padding: 8px;
     border-radius: 8px;
+}
+
+footer{
+    text-align: center;
 }
