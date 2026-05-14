@@ -1,40 +1,61 @@
-async function login() {
-    //variables to hold respective value enterd by user inside element
-    const username = document.getElementById("username-log").value;
-    const password = document.getElementById("password-log").value;
-    const message = document.getElementById("message");
+function toggleChat() {
+    let box = document.getElementById("chatbox");
+    box.style.display = box.style.display === "none" ? "block" : "none";
+}
 
-    try {
-        //loadig json file 
-        const response = await fetch("users.json");
-        console.log("Fetched JSON data successfully")
-        const data = await response.json();
+function sendMessage() {
+    let input = document.getElementById("chat-input");
+    let chatBody = document.getElementById("chat-body");
 
+    let userMsg = input.value.trim();
+    if (userMsg === "") return;
 
-        //checking user
-        const user = data.users.find(
-            u => u.username === username && u.password === password
-        );
+    // Show user message
+    chatBody.innerHTML += `<p><b>You:</b> ${userMsg}</p>`;
+    input.value = "";
 
-            if (user){
-                message.style.color = "green";
-                message.textContent = "Login Successful";
-                console.log("Login Successful!")
+    // Optional: show typing
+    chatBody.innerHTML += `<p id="typing"><b>Bot:</b> typing...</p>`;
 
-                sessionStorage.setItem("loggedInUser", username);
-                
-            setTimeout(() => {
-                window.location.href = "home_page.html";
-            }, 1000);
-        }
-            else{
-                message.style.color = "red";
-                message.textContent = "Invalid Username or Password";
-                document.getElementById("username").focus();
-                document.getElementById("username").select();
-            }    
+    // 🔥 Call backend API
+    fetch("http://127.0.0.1:5000/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: userMsg })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("typing").remove();
+
+        chatBody.innerHTML += `<p><b>Bot:</b> ${data.reply}</p>`;
+        chatBody.scrollTop = chatBody.scrollHeight;
+    })
+    .catch(err => {
+        document.getElementById("typing").remove();
+
+        // ✅ fallback logic if API fails
+        let fallback = getFallbackReply(userMsg);
+        chatBody.innerHTML += `<p><b>Bot:</b> ${fallback}</p>`;
+    });
+}
+
+function getFallbackReply(userMsg) {
+    userMsg = userMsg.toLowerCase();
+
+    if (userMsg.includes("login")) {
+        return "Enter your username/email and password, then click Login.";
+    } 
+    else if (userMsg.includes("register")) {
+        return "Click on Register Now and fill your details.";
+    } 
+    else if (userMsg.includes("password")) {
+        return "Click on 'Forgot Password' to reset your password.";
+    } 
+    else if (userMsg.includes("username")) {
+        return "Click on 'Forgot Username' and enter your email.";
     }
-    catch(error){
-        message.textContent = "Error Loading User Data"
-    }
+
+    return "Sorry, I didn't understand. Try asking about login, register, or password.";
 }

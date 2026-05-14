@@ -13,6 +13,20 @@
     </header>
 
     <main>
+        <!-- Chat Bot Icon -->
+<div id="chatbot-icon" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- Chat Box -->
+<div id="chatbox">
+    <div id="chat-header">Ask me anything</div>
+    <div id="chat-body">
+        <p>Hello 👋 How can I help you?</p>
+    </div>
+    <input type="text" id="chat-input" placeholder="Type your question...">
+    <button onclick="sendMessage()">Send</button>
+</div>
     <div class="login-container col-12">
 
 
@@ -38,7 +52,8 @@
         <button id="login-button" onclick="login()">Login</button>
 
         <p id="message"></p>
-
+        <p><a href="forgot-username.html">Forgot Username?</a></p>
+        <p><a href="forget-password.html">Forgot Password?</a></p>  
         <p>Don't have an account?<a href="registration.html">Register Now</a></p>
         </div>
     </div>
